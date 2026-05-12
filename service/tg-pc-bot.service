@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram PC Control Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/tg-pc-control
+ExecStart=/usr/bin/python3 %h/tg-pc-control/bot.py
+Restart=always
+RestartSec=5
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target
